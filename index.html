@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sổ Bán Hàng Pro</title>
+    <title>Sổ Bán Hàng - Shop Ly Nguyễn</title>
 
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/TNB88/Lyshop/main/photo_2025-11-24_15-49-08.jpg">
     <link rel="icon" href="https://raw.githubusercontent.com/TNB88/Lyshop/main/photo_2025-11-24_15-49-08.jpg">
@@ -79,7 +79,9 @@
         @media print {
             .input-group, .btn-add, .btn-copy, .btn-reset-draft, .btn-undo, .btn-print, .btn-toggle, #qrSection, .qr-container, .helper-row, .btn-finalize, .revenue-section { display: none !important; }
             #historyBox { display: block !important; border: none; max-height: none; font-size: 14px; padding: 0; color: black; }
-            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 1px dashed #000; padding-bottom: 10px; }
+            
+            /* Tùy chỉnh phần đầu trang in */
+            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 1px dashed #000; padding-bottom: 15px; }
         }
         #printHeader { display: none; }
     </style>
@@ -87,10 +89,11 @@
 <body>
 
     <div id="printHeader">
-        <h2 style="margin:0">HÓA ĐƠN BÁN LẺ</h2>
-        <div style="font-size: 12px; margin-top:5px;">--- Cảm ơn quý khách ---</div>
+        <h1 style="margin:0; text-transform: uppercase; font-size: 24px;">SHOP LY NGUYỄN</h1>
+        <div style="font-size: 16px; margin: 5px 0; font-weight: bold;">SĐT: 0939 617 080</div>
+        <div style="font-size: 13px; margin-bottom: 10px;">----- *** -----</div>
+        <h3 style="margin:0;">HÓA ĐƠN BÁN LẺ</h3>
     </div>
-
     <div class="card">
         <div class="total-label">TỔNG ĐƠN HIỆN TẠI</div>
         <div class="total-value" id="displayTotal">0</div>
@@ -444,4 +447,3 @@
     </script>
 </body>
 </html>
-
