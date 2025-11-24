@@ -81,9 +81,10 @@
             /* 1. Ẩn các nút không cần thiết */
             .input-group, .btn-add, .btn-copy, .btn-reset-draft, .btn-undo, .btn-print, .btn-toggle, #qrSection, .qr-container, .helper-row, .btn-finalize, .revenue-section { display: none !important; }
             
-            /* 2. Reset trang in để không bị ra 2 tờ */
+            /* 2. Reset trang in để không bị ra 2 tờ VÀ THÊM LỀ TRÁI PHẢI */
             @page { margin: 0; size: auto; }
-            body { padding: 0; margin: 0; background-color: white; padding-bottom: 0; height: auto; }
+            /* Sửa dòng dưới đây: padding: 0 thành padding: 0 8px (trên dưới 0, trái phải 8px) */
+            body { padding: 0 8px; margin: 0; background-color: white; padding-bottom: 0; height: auto; }
             
             /* 3. Hiển thị phần chi tiết đơn hàng */
             #historyBox { display: block !important; border: none; max-height: none; font-size: 14px; padding: 0; color: black; overflow: visible; }
