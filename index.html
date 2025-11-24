@@ -76,12 +76,25 @@
         .btn-del-sale { background: #ff3b30; color: white; border: none; padding: 5px 10px; border-radius: 5px; font-size: 12px; margin-left: 10px; cursor: pointer; }
         .btn-clear-sales { background: #8e8e93; color: white; width: 100%; margin-top: 15px; padding: 10px; font-size: 14px; border-radius: 8px; }
 
+        /* --- CẤU HÌNH RIÊNG CHO MÁY IN (SỬA LỖI TẠI ĐÂY) --- */
         @media print {
+            /* 1. Ẩn các nút không cần thiết */
             .input-group, .btn-add, .btn-copy, .btn-reset-draft, .btn-undo, .btn-print, .btn-toggle, #qrSection, .qr-container, .helper-row, .btn-finalize, .revenue-section { display: none !important; }
-            #historyBox { display: block !important; border: none; max-height: none; font-size: 14px; padding: 0; color: black; }
             
-            /* Tùy chỉnh phần đầu trang in */
-            #printHeader { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 1px dashed #000; padding-bottom: 15px; }
+            /* 2. Reset trang in để không bị ra 2 tờ */
+            @page { margin: 0; size: auto; }
+            body { padding: 0; margin: 0; background-color: white; padding-bottom: 0; height: auto; }
+            
+            /* 3. Hiển thị phần chi tiết đơn hàng */
+            #historyBox { display: block !important; border: none; max-height: none; font-size: 14px; padding: 0; color: black; overflow: visible; }
+            
+            /* 4. Tùy chỉnh Header khi in */
+            #printHeader { display: block !important; text-align: center; margin-bottom: 10px; border-bottom: 1px dashed #000; padding-bottom: 10px; }
+
+            /* 5. SỬA LỖI MÀU SẮC: Ép màu đen cho số tiền tổng */
+            .card { box-shadow: none; border: none; padding: 0; margin-bottom: 10px; }
+            .total-value { color: #000000 !important; font-weight: 900; border: 2px solid #000; display: inline-block; padding: 5px 15px; border-radius: 8px; }
+            .total-label { color: #000000 !important; font-weight: bold; margin-bottom: 5px; }
         }
         #printHeader { display: none; }
     </style>
@@ -94,6 +107,7 @@
         <div style="font-size: 13px; margin-bottom: 10px;">----- *** -----</div>
         <h3 style="margin:0;">HÓA ĐƠN BÁN LẺ</h3>
     </div>
+
     <div class="card">
         <div class="total-label">TỔNG ĐƠN HIỆN TẠI</div>
         <div class="total-value" id="displayTotal">0</div>
